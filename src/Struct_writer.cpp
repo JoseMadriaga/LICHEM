@@ -76,12 +76,7 @@ void WriteGauInput(vector<QMMMAtom>& QMMMData, string calcTyp,
   }
   call << '\n';
   //Start: Hatice
-  if(g09){
-    call << "%NprocShared=" << Ncpus << '\n';
-  }
-  else{
-    call << "%CPU=0-" << Ncpus-1 << '\n';
-  }
+  call << "%NProcShared=" << Ncpus << '\n';
   //End: Hatice
   //Add ROUTE section
   call << calcTyp;
