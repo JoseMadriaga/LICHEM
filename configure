@@ -74,9 +74,9 @@ else
     echo '   Configuring for serial LICHEM'
     echo '   Installation directory: ' $prefix
     echo '   CXX= g++'
-    echo '   CXXFLAGS= -static -O3 -fopenmp'
+    echo '   CXXFLAGS= -O3 -fopenmp'
     echo 'CXX= g++' >>Makefile
-    echo 'CXXFLAGS= -static -O3 -fopenmp' >>Makefile
+    echo 'CXXFLAGS= -O3 -fopenmp' >>Makefile
     echo '' >>Makefile
     echo 'UNAME := $(shell uname)' >>Makefile
     echo 'ifeq ($(UNAME), Darwin)' >>Makefile
