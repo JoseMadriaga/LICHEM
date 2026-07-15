@@ -53,22 +53,40 @@ echo '' >> Makefile
 echo '### Standard compiler settings ###' >> Makefile
 echo '' >> Makefile
 
+#removing -fsanitize for now
+#removing -fno-oit-frame-pointer 
+
 if $mpi; then
     echo '   Configuring for parallel LICHEM'
     echo '   Installation directory: ' $prefix
-    echo '   CXX= mpicxx'
-    echo '   CXXFLAGS=-O3 -fopenmp'
-    echo 'CXX= mpic++' >>Makefile
-    echo 'CXXFLAGS= -O3 -fopenmp' >>Makefile
-    #update header file
+    echo '   CXX= mpic++'
+    echo '   CXXFLAGS=-g -O3 -fopenmp'
+
+    echo 'CXX= mpic++' >> Makefile
+    echo 'CXXFLAGS= -g -O3 -fopenmp' >> Makefile
+    echo 'LDFLAGS= -rdynamic' >> Makefile
     sed -i 's/LICHEM_QSM\.h/LICHEM_QSM_MPI\.h/g' include/LICHEM_headers.h
-    #add mpi header
-    if ! grep -q "#include <mpi\.h>" include/LICHEM_clibs.h ;
-    then
-        #sed -i 's/\ (.* \) #endif/ \ 1#include <mpi\.h>/g' include/LICHEM_clibs.h
+
+    if ! grep -q "#include <mpi\.h>" include/LICHEM_clibs.h; then
         sed -i '/#include <algorithm>/a #include <mpi\.h>' include/LICHEM_clibs.h
-        #echo '#endif' >> include/LICHEM_clibs.h
     fi
+
+#if $mpi; then
+#    echo '   Configuring for parallel LICHEM'
+#    echo '   Installation directory: ' $prefix
+#    echo '   CXX= mpicxx'
+#    echo '   CXXFLAGS=-O3 -fopenmp'
+#    echo 'CXX= mpic++' >>Makefile
+#    echo 'CXXFLAGS= -O3 -fopenmp' >>Makefile
+#    #update header file
+#    sed -i 's/LICHEM_QSM\.h/LICHEM_QSM_MPI\.h/g' include/LICHEM_headers.h
+#    #add mpi header
+#    if ! grep -q "#include <mpi\.h>" include/LICHEM_clibs.h ;
+#    then
+#        #sed -i 's/\ (.* \) #endif/ \ 1#include <mpi\.h>/g' include/LICHEM_clibs.h
+#        sed -i '/#include <algorithm>/a #include <mpi\.h>' include/LICHEM_clibs.h
+#        #echo '#endif' >> include/LICHEM_clibs.h
+#    fi
 
 else
     echo '   Configuring for serial LICHEM'

@@ -42,7 +42,7 @@
   ###############################################################################
 */
 
-double CalcForces(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,\
+void CalcForces(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,\
 VectorXd& Eqm_images, VectorXd& Emm_images,VectorXd& Eqmmm_images,\
 VectorXd& force, int beadsize, int QMdim, bool first_time,
 fstream& logFile)
@@ -308,7 +308,7 @@ double CalcEnergy(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,
 
 }
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-double runMMopt(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,fstream& logFile)
+void runMMopt(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,fstream& logFile)
 {
        double SumE,SumEeV;
        //Set end points for the optimization
@@ -365,7 +365,7 @@ double runMMopt(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,fstream& logFi
 }
 //---------------------------------------------------------------------------
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-double runRestrMMopt(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,double restr,fstream& logFile)
+void runRestrMMopt(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,double restr,fstream& logFile)
 {
  
     logFile << '\n';

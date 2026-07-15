@@ -247,7 +247,7 @@ void WriteTINKMPole(vector<QMMMAtom>&,fstream&,int,int);
 void WriteQMConnect(int&,char**&);
 
 //QSM header
-#include "LICHEM_QSM.h"
+#include "LICHEM_QSM_MPI.h"
 
 //Function definitions (alphabetical)
 #include "Analysis.cpp"

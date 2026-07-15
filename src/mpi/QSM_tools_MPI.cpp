@@ -32,7 +32,7 @@
   ###############################################################################
 */
 
-double CalcForcesMPI(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,\
+void CalcForcesMPI(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,\
 VectorXd& Eqm_images, VectorXd& Emm_images,VectorXd& Eqmmm_images,\
 VectorXd& force, int beadsize, int QMdim, bool first_time,fstream& logFile)
 {
@@ -309,7 +309,7 @@ VectorXd& force, int beadsize, int QMdim, bool first_time,fstream& logFile)
 
 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-double runMMoptMPI(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,
+void runMMoptMPI(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,
                 bool before_qsm,fstream& logFile)
 {
 
@@ -430,7 +430,7 @@ double runMMoptMPI(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,
 
 }
 //---------------------------------------------------------------------------
-double runRestrMMoptMPI(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,
+void runRestrMMoptMPI(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,
                         double restr,fstream& logFile)
 {
 
