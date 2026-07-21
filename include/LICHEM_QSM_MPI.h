@@ -76,7 +76,7 @@ void updatepath(VectorXd& wholepath, vector<QMMMAtom>& QMMMData,
                 QMMMSettings& QMMMOpts,int beadsize, int Natoms,
                 bool path_to_struct);
 
-double CalcEnergy(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,
+void CalcEnergy(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,
                   VectorXd& Eqm_images, VectorXd& Emm_images,
                   VectorXd& Eqmmm_images,fstream& logFile);
 

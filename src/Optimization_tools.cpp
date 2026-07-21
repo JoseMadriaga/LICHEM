@@ -19,15 +19,15 @@
   # Functions for reaction path optimizations                                   #
   # Includes:                                                                   #
   #                                                                             #
-  #       Force calculation        : double CalcForces                          #
+  #       Force calculation        : void CalcForces                            #
   #                                                                             #
-  #       Energy calculation       : double CalcEnergy                          #
+  #       Energy calculation       : void CalcEnergy                            #
   #                                                                             #
   #       MM Optimization without                                               #
-  #       restrains                : double runMMopt                            #
+  #       restrains                : void runMMopt                              #
   #                                                                             #
   #       MM Optimization with                                                  #
-  #       restrains                : double runRestrMMopt                       #
+  #       restrains                : void runRestrMMopt                         #
   #                                  (calls double TINKEROptRestr)              #
   #                                                                             #
   #       MM Optimization with                                                  #
@@ -186,7 +186,7 @@ fstream& logFile)
 } 
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-double CalcEnergy(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,
+void CalcEnergy(vector<QMMMAtom>& QMMMData,QMMMSettings& QMMMOpts,
                   VectorXd& Eqm_images, VectorXd& Emm_images,
                   VectorXd& Eqmmm_images,fstream& logFile)
 {

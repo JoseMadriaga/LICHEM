@@ -25,7 +25,6 @@
   #                                                                             #
   #       MM Optimization with                                                  #
   #       restrains                : void runRestrMMoptMPI                      #
-  #                                  (calls void TINKEROptRestr)                #
   #                                                                             #
   #       Convergence Test for QSM : void QSMConverged                          #
   #                                                                             #
