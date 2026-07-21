@@ -48,7 +48,6 @@
 #include <map>
 #include <sys/stat.h>
 #include <algorithm>
-#include <mpi.h>
 //Start: Hatice GOKCAN
 //End: Hatice GOKCAN
 
