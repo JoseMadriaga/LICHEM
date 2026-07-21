@@ -53,18 +53,18 @@ echo '' >> Makefile
 echo '### Standard compiler settings ###' >> Makefile
 echo '' >> Makefile
 
-#removing -fsanitize for now
-#removing -fno-oit-frame-pointer 
-
+##debug commands
+#-fsanitize
+#-fno-oit-frame-pointer 
 if $mpi; then
     echo '   Configuring for parallel LICHEM'
     echo '   Installation directory: ' $prefix
-    echo '   CXX= mpic++'
-    echo '   CXXFLAGS=-g -O3 -fopenmp'
+    echo '   CXX= mpicxx'
+    echo '   CXXFLAGS= -O3 -fopenmp'
 
-    echo 'CXX= mpic++' >> Makefile
-    echo 'CXXFLAGS= -g -O3 -fopenmp' >> Makefile
-    echo 'LDFLAGS= -rdynamic' >> Makefile
+    echo 'CXX= mpicxx' >> Makefile
+    echo 'CXXFLAGS= -O3 -fopenmp' >> Makefile
+    #echo 'LDFLAGS= -rdynamic' >> Makefile
     sed -i 's/LICHEM_QSM\.h/LICHEM_QSM_MPI\.h/g' include/LICHEM_headers.h
 
     if ! grep -q "#include <mpi\.h>" include/LICHEM_clibs.h; then
