@@ -53,9 +53,6 @@ echo '' >> Makefile
 echo '### Standard compiler settings ###' >> Makefile
 echo '' >> Makefile
 
-##debug commands
-#-fsanitize
-#-fno-oit-frame-pointer 
 if $mpi; then
     echo '   Configuring for parallel LICHEM'
     echo '   Installation directory: ' $prefix

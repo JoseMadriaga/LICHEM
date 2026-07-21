@@ -18,16 +18,16 @@
   # Functions for reaction path optimizations in parallel                       #
   # Includes:                                                                   #
   #                                                                             #
-  #       Force calculation        : double CalcForcesMPI                       #
+  #       Force calculation        : void CalcForcesMPI                         #
   #                                                                             #
   #       MM Optimization without                                               #
-  #       restrains                : double runMMoptMPI                         #
+  #       restrains                : void runMMoptMPI                           #
   #                                                                             #
   #       MM Optimization with                                                  #
-  #       restrains                : double runRestrMMoptMPI                    #
-  #                                  (calls double TINKEROptRestr)              #
+  #       restrains                : void runRestrMMoptMPI                      #
+  #                                  (calls void TINKEROptRestr)                #
   #                                                                             #
-  #       Convergence Test for QSM : bool QSMConverged                          #
+  #       Convergence Test for QSM : void QSMConverged                          #
   #                                                                             #
   ###############################################################################
 */
